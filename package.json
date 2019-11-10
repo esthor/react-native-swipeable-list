@@ -25,5 +25,12 @@
   "bugs": {
     "url": "https://github.com/esthor/react-native-swipeable-flatlist/issues"
   },
-  "homepage": "https://github.com/esthor/react-native-swipeable-flatlist#readme"
+  "homepage": "https://github.com/esthor/react-native-swipeable-flatlist#readme",
+  "devDependencies": {
+    "metro-react-native-babel-preset": "^0.57.0",
+    "react-native": "^0.61.4"
+  },
+  "dependencies": {
+    "react": "^16.11.0"
+  }
 }
