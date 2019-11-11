@@ -1,6 +1,6 @@
 {
-  "name": "react-native-swipeable-flatlist",
-  "version": "0.0.1",
+  "name": "react-native-swipeable-list",
+  "version": "0.0.2",
   "description": "A Swipeable FlatList for React-Native with Quick Actions & Animations",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/esthor/react-native-swipeable-flatlist.git"
+    "url": "git+https://github.com/esthor/react-native-swipeable-list.git"
   },
   "keywords": [
     "react-native",
@@ -23,9 +23,9 @@
   "author": "Erik Thorelli",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/esthor/react-native-swipeable-flatlist/issues"
+    "url": "https://github.com/esthor/react-native-swipeable-list/issues"
   },
-  "homepage": "https://github.com/esthor/react-native-swipeable-flatlist#readme",
+  "homepage": "https://github.com/esthor/react-native-swipeable-list#readme",
   "devDependencies": {
     "metro-react-native-babel-preset": "^0.57.0",
     "react-native": "^0.61.4"
