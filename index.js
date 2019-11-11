@@ -1,3 +1,3 @@
 import { SwipeableFlatlist } from './Swipeable/SwipeableFlatlist';
 
-export { SwipeableFlatlist };
+export default SwipeableFlatlist;

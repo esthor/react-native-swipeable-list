@@ -1,5 +1,4 @@
 // @ts-nocheck
-/* eslint-disable */
 
 'use strict';
 
@@ -362,4 +361,4 @@ const styles = StyleSheet.create({
     },
 });
 
-module.exports = SwipeableRow;
+export default SwipeableRow;

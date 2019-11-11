@@ -1,11 +1,10 @@
-/* eslint-disable */
 // @ts-nocheck
 
 'use strict';
 
 import React from 'react';
 import { FlatList } from 'react-native';
-import { SwipeableRow } from './SwipeableRow';
+import SwipeableRow from './SwipeableRow';
 
 // import type { Props as FlatListProps } from 'react-native';
 // import type { renderItemType } from 'VirtualizedList';
@@ -166,4 +165,4 @@ class SwipeableFlatlist extends React.Component {
     }
 }
 
-module.exports = SwipeableFlatlist;
+export default SwipeableFlatlist;
