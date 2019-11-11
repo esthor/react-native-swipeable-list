@@ -53,7 +53,7 @@ import SwipeableRow from './SwipeableRow';
  * - More to come
  */
 
-class SwipeableFlatList extends React.Component {
+class SwipeableFlatlist extends React.Component {
     _flatListRef = null;
     _shouldBounceFirstRowOnMount = false;
 
@@ -166,4 +166,4 @@ class SwipeableFlatList extends React.Component {
     }
 }
 
-module.exports = SwipeableFlatList;
+module.exports = SwipeableFlatlist;
