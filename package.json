@@ -27,10 +27,11 @@
   },
   "homepage": "https://github.com/esthor/react-native-swipeable-list#readme",
   "devDependencies": {
-    "metro-react-native-babel-preset": "^0.57.0",
-    "react-native": "^0.61.4"
+    "metro-react-native-babel-preset": "^0.57.0"
   },
   "dependencies": {
-    "react": "^16.11.0"
+    "react": "^16.11.0",
+    "react-native": "^0.61.4"
+
   }
 }
