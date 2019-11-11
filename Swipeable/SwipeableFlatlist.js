@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { FlatList } from 'react-native';
-import SwipeableRow from './SwipeableRow';
+import { SwipeableRow } from './SwipeableRow';
 
 // import type { Props as FlatListProps } from 'react-native';
 // import type { renderItemType } from 'VirtualizedList';
