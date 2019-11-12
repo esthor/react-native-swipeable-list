@@ -2,6 +2,8 @@
 
 A Swipeable FlatList for React-Native with Quick Actions &amp; Animations
 
+Started from the `SwipeableFlatList` component that was removed from react-native's experimental libraries. (See: https://github.com/facebook/react-native/commit/9ca7989f60cc8137705effeaad0f128fa73ed2e4)
+
 ## Usage
 
 `import SwipeableFlatList from 'react-native-swipeable-list';`
