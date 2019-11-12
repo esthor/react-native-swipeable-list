@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 'use strict';
 
 import React from 'react';
@@ -71,10 +69,7 @@ const emptyFunction = () => {};
  * to use this component separately.
  */
 class SwipeableRow extends React.Component {
-    _handleMoveShouldSetPanResponderCapture = (
-        event,
-        gestureState
-    ) => {
+    _handleMoveShouldSetPanResponderCapture = (event, gestureState) => {
         // Decides whether a swipe is responded to by this component or its child
         return gestureState.dy < 10 && this._isValidSwipe(gestureState);
     };
@@ -95,10 +90,7 @@ class SwipeableRow extends React.Component {
         }
     };
 
-    _onPanResponderTerminationRequest = (
-        event,
-        gestureState
-    ) => {
+    _onPanResponderTerminationRequest = (event, gestureState) => {
         return false;
     };
 
@@ -170,8 +162,8 @@ class SwipeableRow extends React.Component {
          * We do not need an "animateOpen(noCallback)" because this animation is
          * handled internally by this component.
          */
-        const isOpen = this.props.isOpen !== null ? this.props.isOpen : false;
-        const nextIsOpen = nextProps.isOpen !== null ? nextProps.isOpen : false;
+        const isOpen = this.props.isOpen ?? false;
+        const nextIsOpen = nextProps.isOpen ?? false;
 
         if (isOpen && !nextIsOpen) {
             this._animateToClosedPosition();
@@ -218,7 +210,7 @@ class SwipeableRow extends React.Component {
         this._animateToClosedPosition();
     }
 
-    _onSwipeableViewLayout = (event) => {
+    _onSwipeableViewLayout = event => {
         this.setState({
             isSwipeableViewRendered: true,
             rowHeight: event.nativeEvent.layout.height,
@@ -246,18 +238,13 @@ class SwipeableRow extends React.Component {
          * swiping is available, but swiping right does not do anything
          * functionally.
          */
-        // I think this is supposed to be a ternary, the colon was missing...was this an early stage syntax?
         const gestureStateDx = IS_RTL ? -gestureState.dx : gestureState.dx;
         return (
             this._isSwipingRightFromClosed(gestureState) && gestureStateDx > RIGHT_SWIPE_THRESHOLD
         );
     }
 
-    _animateTo(
-        toValue,
-        duration = SWIPE_DURATION,
-        callback = emptyFunction
-    ) {
+    _animateTo(toValue, duration = SWIPE_DURATION, callback = emptyFunction) {
         Animated.timing(this.state.currentLeft, {
             duration,
             toValue,
@@ -269,7 +256,7 @@ class SwipeableRow extends React.Component {
     }
 
     _animateToOpenPosition() {
-        const maxSwipeDistance = this.props.maxSwipeDistance !== null ? this.props.maxSwipeDistance : 0;
+        const maxSwipeDistance = this.props.maxSwipeDistance ?? 0;
         const directionAwareMaxSwipeDistance = IS_RTL ? -maxSwipeDistance : maxSwipeDistance;
         this._animateTo(-directionAwareMaxSwipeDistance);
     }
@@ -283,8 +270,7 @@ class SwipeableRow extends React.Component {
             speed > HORIZONTAL_FULL_SWIPE_SPEED_THRESHOLD
                 ? speed
                 : HORIZONTAL_FULL_SWIPE_SPEED_THRESHOLD;
-        // @ts-ignore
-        const maxSwipeDistance = this.props.maxSwipeDistance !== null ? this.props.maxSwipeDistance : 0;
+        const maxSwipeDistance = this.props.maxSwipeDistance ?? 0;
         /**
          * Calculate the duration the row should take to swipe the remaining distance
          * at the same speed the user swiped (or the speed threshold)
@@ -294,16 +280,14 @@ class SwipeableRow extends React.Component {
         this._animateTo(-directionAwareMaxSwipeDistance, duration);
     }
 
-    // @ts-ignore
     _animateToClosedPosition(duration = SWIPE_DURATION) {
         this._animateTo(CLOSED_LEFT_POSITION, duration);
     }
 
-    // @ts-ignore
     _animateToClosedPositionDuringBounce = () => {
         this._animateToClosedPosition(RIGHT_SWIPE_BOUNCE_BACK_DURATION);
     };
-    // @ts-ignore
+
     _animateBounceBack(duration) {
         /**
          * When swiping right, we want to bounce back past closed position on release
@@ -320,10 +304,8 @@ class SwipeableRow extends React.Component {
     }
 
     // Ignore swipes due to user's finger moving slightly when tapping
-    // @ts-ignore
     _isValidSwipe(gestureState) {
-        // @ts-ignore
-        const preventSwipeRight = this.props.preventSwipeRight !== null ? this.props.preventSwipeRight : false;
+        const preventSwipeRight = this.props.preventSwipeRight ?? false;
         if (
             preventSwipeRight &&
             this._previousLeft === CLOSED_LEFT_POSITION &&
@@ -340,10 +322,7 @@ class SwipeableRow extends React.Component {
          * If user has swiped past a certain distance, animate the rest of the way
          * if they let go
          */
-        const swipeThreshold =
-            this.props.swipeThreshold !== null
-                ? this.props.swipeThreshold
-                : DEFAULT_SWIPE_THRESHOLD;
+        const swipeThreshold = this.props.swipeThreshold ?? DEFAULT_SWIPE_THRESHOLD;
         return (
             Math.abs(gestureState.dx) > swipeThreshold ||
             gestureState.vx > HORIZONTAL_FULL_SWIPE_SPEED_THRESHOLD
@@ -361,4 +340,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default SwipeableRow;
+module.exports = SwipeableRow;
