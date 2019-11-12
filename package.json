@@ -1,6 +1,6 @@
 {
   "name": "react-native-swipeable-list",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A Swipeable FlatList for React-Native with Quick Actions & Animations",
   "main": "index.js",
   "scripts": {
@@ -27,8 +27,8 @@
   },
   "homepage": "https://github.com/esthor/react-native-swipeable-list#readme",
   "peerDependencies": {
-    "react": ">=16.9.0",
-    "react-native": ">=0.61.0"
+    "react": ">=16.11.0",
+    "react-native": ">=0.61.4"
   },
   "devDependencies": {
     "metro-react-native-babel-preset": "^0.57.0",
