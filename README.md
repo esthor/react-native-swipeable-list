@@ -6,9 +6,21 @@ Started from the `SwipeableFlatList` component that was removed from react-nativ
 
 ## Usage
 
+1. Install the package in your project:
+
+`npm install react-native-swipeable-flatlist`
+
+or
+
+`yarn add react-native-swipeable-flatlist`
+
+
+2. Import the component into your component:
+
 `import SwipeableFlatList from 'react-native-swipeable-list';`
 
-Pass it a data array. It inherits FlatListProps from the standard `FlatList` component from react-native.
+
+3. Pass it a data array. It inherits FlatListProps from the standard `FlatList` component from react-native.
 
 It can be passed other props:
 
