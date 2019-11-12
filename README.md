@@ -9,10 +9,12 @@ A Swipeable FlatList for React-Native with Quick Actions &amp; Animations
 Pass it a data array. It inherits FlatListProps from the standard `FlatList` component from react-native.
 
 It can be passed other props:
-    -To alert the user that swiping is possible, the first row can bounce on component mount.
+
+    - To alert the user that swiping is possible, the first row can bounce on component mount.
     ```bounceFirstRowOnMount: boolean```
 
     `maxSwipeDistance`
+
     `renderQuickActions`
 
     - Maximum distance to open to after a swipe
