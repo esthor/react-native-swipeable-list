@@ -165,4 +165,4 @@ class SwipeableFlatlist extends React.Component {
     }
 }
 
-export default SwipeableFlatlist;
+module.exports = SwipeableFlatList;

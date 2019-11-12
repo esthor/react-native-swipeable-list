@@ -1,3 +1,3 @@
-import SwipeableFlatlist from './Swipeable/SwipeableFlatlist';
+import SwipeableFlatList from './Swipeable/SwipeableFlatList';
 
-export default SwipeableFlatlist;
+module.exports = { SwipeableFlatList };
