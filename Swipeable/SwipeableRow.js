@@ -340,4 +340,4 @@ const styles = StyleSheet.create({
     },
 });
 
-module.exports = SwipeableRow;
+export default SwipeableRow;
