@@ -40,3 +40,7 @@ It can be passed other props:
 
     - Callback method to render the view that will be unveiled on swipe
     ```renderQuickActions: renderItemType```
+
+## Example
+
+Check out the example in the `/examples` folder. Clone this repo, then `cd examples && yarn install && yarn start` and then either  `react-native run-ios` or `react-native run-android` to get the app up and running locally. Play with the code and see what you can do.
