@@ -26,14 +26,11 @@ or
 
 It can be passed other props:
 
-    - To alert the user that swiping is possible, the first row can bounce on component mount. It's defaulted to true.
-    ```shouldBounceOnMount: boolean```
+- `shouldBounceOnMount` (default = `true`) - To alert the user that swiping is possible, the first row can bounce on component mount. Type `boolean`
 
-    - Maximum distance to open to after a swipe
-    ```maxSwipeDistance: number || (Object => number)```
+- `maxSwipeDistance` - Maximum distance to open to after a swipe. Type `number || (Object => number)`
 
-    - Callback method to render the view that will be unveiled on swipe
-    ```renderQuickActions: renderItemType```
+- `renderQuickActions` - Callback method to render the view that will be unveiled on swipe. Type `renderItemType`
 
 ## Example
 
