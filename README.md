@@ -12,11 +12,11 @@ A Swipeable FlatList for React-Native with Quick Actions &amp; Animations
 
 1. Install the package in your project:
 
-`npm install react-native-swipeable-flatlist`
+`npm install react-native-swipeable-list`
 
 or
 
-`yarn add react-native-swipeable-flatlist`
+`yarn add react-native-swipeable-list`
 
 2. Import the component into your component:
 
