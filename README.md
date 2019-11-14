@@ -26,12 +26,8 @@ or
 
 It can be passed other props:
 
-    - To alert the user that swiping is possible, the first row can bounce on component mount.
-    ```bounceFirstRowOnMount: boolean```
-
-    `maxSwipeDistance`
-
-    `renderQuickActions`
+    - To alert the user that swiping is possible, the first row can bounce on component mount. It's defaulted to true.
+    ```shouldBounceOnMount: boolean```
 
     - Maximum distance to open to after a swipe
     ```maxSwipeDistance: number || (Object => number)```
