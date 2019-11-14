@@ -6,7 +6,7 @@
 
 A Swipeable FlatList for React-Native with Quick Actions &amp; Animations
 
-Started from the `SwipeableFlatList` component that was removed from react-native's experimental libraries. (See: https://github.com/facebook/react-native/commit/9ca7989f60cc8137705effeaad0f128fa73ed2e4)
+![animated screenshot of a swipeable flatlist email inbox mockup using react-native-swipeable-list](images/react-native-swipeale-list-demo1.gif)
 
 ## Usage
 
@@ -18,11 +18,9 @@ or
 
 `yarn add react-native-swipeable-flatlist`
 
-
 2. Import the component into your component:
 
 `import SwipeableFlatList from 'react-native-swipeable-list';`
-
 
 3. Pass it a data array. It inherits FlatListProps from the standard `FlatList` component from react-native.
 
@@ -44,3 +42,7 @@ It can be passed other props:
 ## Example
 
 Check out the example in the `/examples` folder. Clone this repo, then `cd examples && yarn install && yarn start` and then either  `react-native run-ios` or `react-native run-android` to get the app up and running locally. Play with the code and see what you can do.
+
+## History & Shoutouts
+
+Started from the `SwipeableFlatList` component that was removed from react-native's experimental libraries. (See: https://github.com/facebook/react-native/commit/9ca7989f60cc8137705effeaad0f128fa73ed2e4)
