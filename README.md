@@ -22,7 +22,7 @@ or
 
 `import SwipeableFlatList from 'react-native-swipeable-list';`
 
-3. Pass it a data array. It inherits FlatListProps from the standard `FlatList` component from react-native.
+3. Pass it a data array. It inherits [FlatListProps from the standard `FlatList` component from react-native](https://facebook.github.io/react-native/docs/flatlist).
 
 It can be passed other props:
 
