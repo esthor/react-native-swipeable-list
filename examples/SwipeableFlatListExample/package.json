@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "react": "16.9.0",
-    "react-native": "0.61.4",
-    "react-native-swipeable-list": "0.0.9"
+    "react-native": "0.62.2",
+    "react-native-swipeable-list": "0.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
