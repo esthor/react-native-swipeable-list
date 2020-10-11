@@ -1,36 +1,3 @@
-const dummyData0 = [
-    {
-      name: 'Erik Thorelli',
-      subject: 'Have you seen my new library?', 
-      date: 'Today',
-      status: 'new',
-      text:
-        'Bacon ipsum dolor amet brisket chuck fatback doner shankle. Cupim venison flank pork loin ham hock swine...',
-      id: 'asdfjhasdf',
-    },
-    {
-      name: 'Erik Thorelli',
-      subject: 'Have you seen my new pig?',
-      date: 'Today',
-      status: 'new',
-      text:
-        'Bacon ipsum dolor amet brisket chuck fatback doner shankle. Cupim venison flank pork loin ham hock swine...',
-      id: '92urjnfsz9das',
-    },
-    {
-      name: 'Erik Thorelli',
-      subject: 'Have you seen my new bacon?',
-      date: 'Today',
-      status: 'new',
-      text:
-        'Bacon ipsum dolor amet brisket chuck fatback doner shankle. Cupim venison flank pork loin ham hock swine...',
-      id: 'asdfja97f3',
-    },
-  ];
-
-
-
-
 const dummyData = [
   {
     name: 'Raphael',
@@ -834,4 +801,4 @@ const dummyData = [
   },
 ];
 
-module.exports = { dummyData, dummyData0 }
+module.exports = {dummyData};

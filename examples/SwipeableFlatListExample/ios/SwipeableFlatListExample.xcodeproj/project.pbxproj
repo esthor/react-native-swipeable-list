@@ -18,8 +18,8 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* SwipeableFlatListExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SwipeableFlatListExampleTests.m */; };
+		86A91C1C04A4E5D3CB217715 /* libPods-SwipeableFlatListExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34BE087372EB369366A79446 /* libPods-SwipeableFlatListExampleTests.a */; };
 		A09EABD4DDB58209BF1BE644 /* libPods-SwipeableFlatListExample-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5BC553C9965C29CFB50FF6E /* libPods-SwipeableFlatListExample-tvOS.a */; };
-		FD9B0215586C0530F17D941C /* libPods-SwipeableFlatListExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D24E01290BA2050C49BB1286 /* libPods-SwipeableFlatListExampleTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +54,8 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SwipeableFlatListExample/main.m; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* SwipeableFlatListExample-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwipeableFlatListExample-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* SwipeableFlatListExample-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwipeableFlatListExample-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34BE087372EB369366A79446 /* libPods-SwipeableFlatListExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwipeableFlatListExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		477FD8CD0A1B4317083A1960 /* Pods-SwipeableFlatListExample-SwipeableFlatListExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipeableFlatListExample-SwipeableFlatListExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-SwipeableFlatListExample-SwipeableFlatListExampleTests/Pods-SwipeableFlatListExample-SwipeableFlatListExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		494F45264263D8CA0D2BE477 /* Pods-SwipeableFlatListExample-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipeableFlatListExample-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-SwipeableFlatListExample-tvOSTests/Pods-SwipeableFlatListExample-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4B035098D2505DDC44660FC8 /* Pods-SwipeableFlatListExample-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipeableFlatListExample-tvOS.release.xcconfig"; path = "Target Support Files/Pods-SwipeableFlatListExample-tvOS/Pods-SwipeableFlatListExample-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		5C598456B61C4CBDE618AFD3 /* Pods-SwipeableFlatListExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipeableFlatListExample.debug.xcconfig"; path = "Target Support Files/Pods-SwipeableFlatListExample/Pods-SwipeableFlatListExample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -62,8 +64,8 @@
 		A8B4C05490066EA84C436776 /* Pods-SwipeableFlatListExample-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipeableFlatListExample-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-SwipeableFlatListExample-tvOS/Pods-SwipeableFlatListExample-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C5BC553C9965C29CFB50FF6E /* libPods-SwipeableFlatListExample-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwipeableFlatListExample-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA79A9C523CA9E19CB80622E /* libPods-SwipeableFlatListExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwipeableFlatListExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D24E01290BA2050C49BB1286 /* libPods-SwipeableFlatListExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwipeableFlatListExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1970724FDAC0A0B90026F7 /* libPods-SwipeableFlatListExample-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwipeableFlatListExample-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E98CDB60CD984E691AE4AFC4 /* Pods-SwipeableFlatListExample-SwipeableFlatListExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipeableFlatListExample-SwipeableFlatListExampleTests.release.xcconfig"; path = "Target Support Files/Pods-SwipeableFlatListExample-SwipeableFlatListExampleTests/Pods-SwipeableFlatListExample-SwipeableFlatListExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F3DB1B61523C2C8A52F9FA20 /* Pods-SwipeableFlatListExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipeableFlatListExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-SwipeableFlatListExampleTests/Pods-SwipeableFlatListExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -74,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD9B0215586C0530F17D941C /* libPods-SwipeableFlatListExampleTests.a in Frameworks */,
+				86A91C1C04A4E5D3CB217715 /* libPods-SwipeableFlatListExampleTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +146,7 @@
 				CA79A9C523CA9E19CB80622E /* libPods-SwipeableFlatListExample.a */,
 				C5BC553C9965C29CFB50FF6E /* libPods-SwipeableFlatListExample-tvOS.a */,
 				DE1970724FDAC0A0B90026F7 /* libPods-SwipeableFlatListExample-tvOSTests.a */,
-				D24E01290BA2050C49BB1286 /* libPods-SwipeableFlatListExampleTests.a */,
+				34BE087372EB369366A79446 /* libPods-SwipeableFlatListExampleTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -160,6 +162,8 @@
 				0AA1E6F183C25CF911195C4A /* Pods-SwipeableFlatListExample-tvOSTests.release.xcconfig */,
 				F3DB1B61523C2C8A52F9FA20 /* Pods-SwipeableFlatListExampleTests.debug.xcconfig */,
 				83DAE2A042F0EF9DB3FFECC6 /* Pods-SwipeableFlatListExampleTests.release.xcconfig */,
+				477FD8CD0A1B4317083A1960 /* Pods-SwipeableFlatListExample-SwipeableFlatListExampleTests.debug.xcconfig */,
+				E98CDB60CD984E691AE4AFC4 /* Pods-SwipeableFlatListExample-SwipeableFlatListExampleTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = Pods;
@@ -230,6 +234,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				CA4178A166BDE4E566DB83B6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -473,6 +478,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA4178A166BDE4E566DB83B6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwipeableFlatListExample/Pods-SwipeableFlatListExample-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwipeableFlatListExample/Pods-SwipeableFlatListExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
