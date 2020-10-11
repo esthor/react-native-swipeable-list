@@ -5,13 +5,11 @@ import {
   View,
   Text,
   StatusBar,
-  useColorScheme,
   Pressable,
   Alert,
 } from 'react-native';
 
 import SwipeableFlatList from 'react-native-swipeable-list';
-// import ItemRow from './ItemRow';
 
 import {dummyData} from './data/dummyData';
 
@@ -21,7 +19,9 @@ const darkColors = {
   primary2: '#3700b3',
   secondary: '#03DAC6',
   onBackground: '#FFFFFF',
+  error: '#CF6679',
 };
+
 const colorEmphasis = {
   high: 0.87,
   medium: 0.6,
@@ -32,7 +32,7 @@ const extractItemKey = item => {
   return item.id.toString();
 };
 
-function Item({item, backgroundColor, textColor, deleteItem}) {
+const Item = ({item, backgroundColor, textColor, deleteItem}) => {
   return (
     <>
       <View style={styles.item}>
@@ -52,35 +52,75 @@ function Item({item, backgroundColor, textColor, deleteItem}) {
       <View />
     </>
   );
-}
+};
 
 function renderItemSeparator() {
   return <View style={styles.itemSeparator} />;
 }
 
-const App: () => React$Node = () => {
-  // TODO: Should probably be using Context or some other wrapping/container solution for theme data calc/store/retrieve
-  const colorScheme = useColorScheme();
-  const textColor = colorScheme === 'dark' ? '#E2EBFF' : '#333333';
-  // const backgroundColor = colorScheme === 'dark' ? '#333333' : '#E2EBFF';
+const App = () => {
   const [data, setData] = useState(dummyData);
 
   const deleteItem = itemId => {
-    const newState = data.filter(item => item.id !== itemId);
-    return setData(...newState);
+    // ! Please don't do something like this in production. Use proper state management.
+    const newState = [...data];
+    const filteredState = newState.filter(item => item.id !== itemId);
+    return setData(filteredState);
   };
 
-  const QuickActions = ({itemQA}) => {
+  const archiveItem = itemId => {
+    Alert.alert(
+      'DISHONESTY ALERT',
+      "Not gonna Archive it. We're actually are gonna just delete it.",
+      [
+        {
+          text: 'Just delete it?',
+          onPress: () => deleteItem(itemId),
+          style: 'destructive',
+        },
+        {
+          text: 'Cancel',
+          onPress: () => console.log('Cancel Pressed'),
+          style: 'cancel',
+        },
+      ],
+    );
+  };
+
+  const snoozeItem = itemId => {
+    Alert.alert(
+      'DISHONESTY ALERT',
+      "Not gonna Snooze it. We're actually are gonna just delete it.",
+      [
+        {
+          text: 'Just delete it?',
+          onPress: () => deleteItem(itemId),
+          style: 'destructive',
+        },
+        {
+          text: 'Cancel',
+          onPress: () => console.log('Cancel Pressed'),
+          style: 'cancel',
+        },
+      ],
+    );
+  };
+
+  const QuickActions = (index, qaItem) => {
     return (
       <View style={styles.qaContainer}>
         <View style={[styles.button, styles.button1]}>
-          <Text style={[styles.buttonText, styles.button1Text]}>Archive</Text>
+          <Pressable onPress={() => archiveItem(qaItem.id)}>
+            <Text style={[styles.buttonText, styles.button1Text]}>Archive</Text>
+          </Pressable>
         </View>
         <View style={[styles.button, styles.button2]}>
-          <Text style={[styles.buttonText, styles.button2Text]}>Snooze</Text>
+          <Pressable onPress={() => snoozeItem(qaItem.id)}>
+            <Text style={[styles.buttonText, styles.button2Text]}>Snooze</Text>
+          </Pressable>
         </View>
         <View style={[styles.button, styles.button3]}>
-          <Pressable onPress={() => Alert.alert('hello')}>
+          <Pressable onPress={() => deleteItem(qaItem.id)}>
             <Text style={[styles.buttonText, styles.button3Text]}>Delete</Text>
           </Pressable>
         </View>
@@ -93,7 +133,7 @@ const App: () => React$Node = () => {
       <StatusBar barStyle="dark-content" />
       <SafeAreaView style={styles.container}>
         <View style={styles.headerContainer}>
-          <Text style={[styles.headerText, {color: textColor}]}>Inbox</Text>
+          <Text style={styles.headerText}>Inbox</Text>
         </View>
         <SwipeableFlatList
           keyExtractor={extractItemKey}
@@ -102,7 +142,7 @@ const App: () => React$Node = () => {
             <Item item={item} deleteItem={() => deleteItem} />
           )}
           maxSwipeDistance={240}
-          renderQuickActions={QuickActions}
+          renderQuickActions={({index, item}) => QuickActions(index, item)}
           contentContainerStyle={styles.contentContainerStyle}
           shouldBounceOnMount={true}
           ItemSeparatorComponent={renderItemSeparator}
@@ -124,7 +164,7 @@ const styles = StyleSheet.create({
   },
   headerText: {
     fontSize: 30,
-    fontWeight: '600',
+    fontWeight: '800',
     color: darkColors.onBackground,
     opacity: colorEmphasis.high,
   },
@@ -162,7 +202,7 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     backgroundColor: darkColors.onBackground,
-    opacity: colorEmphasis.disabled,
+    opacity: colorEmphasis.high,
     borderColor: darkColors.primary,
     borderWidth: 1,
     borderRadius: 20,
@@ -170,8 +210,8 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     shadowColor: darkColors.secondary,
     shadowOffset: {width: 1, height: 1},
-    shadowRadius: 3,
-    shadowOpacity: 1,
+    shadowRadius: 2,
+    shadowOpacity: colorEmphasis.high,
   },
   itemSeparator: {
     height: StyleSheet.hairlineWidth,
@@ -182,37 +222,24 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'flex-end',
-    // marginRight: 20,
   },
   button: {
     width: 80,
     alignItems: 'center',
     justifyContent: 'center',
-    // marginHorizontal: 0.1,
-  },
-  button1: {
-    // backgroundColor: '#555555',
-  },
-  button2: {
-    // backgroundColor: '#555555',
-  },
-  button3: {
-    // backgroundColor: '#555555',
-    // borderBottomRightRadius: 5,
-    // borderTopRightRadius: 5,
   },
   buttonText: {
-    color: '#9eb5e6',
     fontWeight: 'bold',
+    opacity: colorEmphasis.high,
   },
   button1Text: {
-    color: '#560061',
+    color: darkColors.primary,
   },
   button2Text: {
-    color: '#7A3100',
+    color: darkColors.secondary,
   },
   button3Text: {
-    color: '#423900',
+    color: darkColors.error,
   },
   contentContainerStyle: {
     flexGrow: 1,
