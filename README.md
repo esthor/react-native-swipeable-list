@@ -6,7 +6,7 @@
 
 A Swipeable FlatList for React-Native with Quick Actions &amp; Animations
 
-![animated screenshot of a swipeable flatlist email inbox mockup using react-native-swipeable-list](images/react-native-swipeale-list-demo1.gif)
+![animated screenshot of a swipeable flatlist email inbox mockup using react-native-swipeable-list](images/react-native-swipeable-list-demo2.gif)
 
 ## Usage
 
@@ -30,7 +30,7 @@ It can be passed other props:
 
 - `maxSwipeDistance` - Maximum distance to open to after a swipe. Type `number || (Object => number)`
 
-- `renderQuickActions` - Callback method to render the view that will be unveiled on swipe. Type `renderItemType`
+- `renderQuickActions` - Callback method to render the view that will be unveiled on swipe. Type `renderItemType` (which provides `index` and  `item`, which will be very useful for performing actions on your items)
 
 ## Example
 
