@@ -9,3 +9,6 @@ dist
 
 # Dependency directory
 node_modules
+
+# macOS being a macOS
+.DS_Store
