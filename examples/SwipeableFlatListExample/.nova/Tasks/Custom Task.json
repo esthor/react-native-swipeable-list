@@ -1,0 +1,9 @@
+{
+  "actions" : {
+    "run" : {
+      "enabled" : true,
+      "script" : "yarn start"
+    }
+  },
+  "identifier" : "4B71E5A6-3994-4895-9544-ABF58B03507F"
+}

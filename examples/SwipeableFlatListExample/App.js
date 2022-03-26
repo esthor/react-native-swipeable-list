@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -28,11 +28,15 @@ const colorEmphasis = {
   disabled: 0.38,
 };
 
+const ACTION_ITEM_WIDTH = 80;
+
+const NUMBER_OF_ITEMS = 3;
+
 const extractItemKey = item => {
   return item.id.toString();
 };
 
-const Item = ({item, backgroundColor, textColor, deleteItem}) => {
+const Item = ({item}) => {
   return (
     <>
       <View style={styles.item}>
@@ -60,6 +64,7 @@ function renderItemSeparator() {
 
 const App = () => {
   const [data, setData] = useState(dummyData);
+  const swipeableListRef = useRef(null);
 
   const deleteItem = itemId => {
     // ! Please don't do something like this in production. Use proper state management.
@@ -110,7 +115,7 @@ const App = () => {
     return (
       <View style={styles.qaContainer}>
         <View style={[styles.button, styles.button1]}>
-          <Pressable onPress={() => archiveItem(qaItem.id)}>
+          <Pressable onPress={() => console.log(swipeableListRef)}>
             <Text style={[styles.buttonText, styles.button1Text]}>Archive</Text>
           </Pressable>
         </View>
@@ -130,22 +135,23 @@ const App = () => {
 
   return (
     <>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle="light-content" />
       <SafeAreaView style={styles.container}>
         <View style={styles.headerContainer}>
           <Text style={styles.headerText}>Inbox</Text>
         </View>
         <SwipeableFlatList
+          ref={swipeableListRef}
           keyExtractor={extractItemKey}
           data={data}
           renderItem={({item}) => (
             <Item item={item} deleteItem={() => deleteItem} />
           )}
-          maxSwipeDistance={240}
-          renderQuickActions={({index, item}) => QuickActions(index, item)}
           contentContainerStyle={styles.contentContainerStyle}
-          shouldBounceOnMount={true}
           ItemSeparatorComponent={renderItemSeparator}
+          maxSwipeDistance={ACTION_ITEM_WIDTH * NUMBER_OF_ITEMS}
+          renderQuickActions={({index, item}) => QuickActions(index, item)}
+          shouldBounceOnMount={true}
         />
       </SafeAreaView>
     </>
@@ -224,7 +230,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   button: {
-    width: 80,
+    width: ACTION_ITEM_WIDTH,
     alignItems: 'center',
     justifyContent: 'center',
   },
