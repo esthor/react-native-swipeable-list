@@ -1,6 +1,6 @@
 {
   "name": "react-native-swipeable-list",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A Swipeable FlatList for React-Native with Quick Actions & Animations",
   "main": "index.js",
   "scripts": {
