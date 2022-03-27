@@ -3,6 +3,7 @@
 [![npm version](https://badge.fury.io/js/react-native-swipeable-list.svg)](https://badge.fury.io/js/react-native-swipeable-list)
 ![NPM](https://img.shields.io/npm/l/react-native-swipeable-list?color=31%2C191%2C31)
 ![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+[![Build status](https://build.appcenter.ms/v0.1/apps/13534511-14df-4ea0-b460-22eb6d84e8fe/branches/main/badge)](https://appcenter.ms)
 
 A Swipeable FlatList for React-Native with Quick Actions &amp; Animations
 
