@@ -180,8 +180,12 @@ class SwipeableRow extends React.Component {
         // The view hidden behind the main view
         let slideOutView;
         if (this.state.isSwipeableViewRendered && this.state.rowHeight) {
-            slideOutView = (
-                <View style={[styles.slideOutContainer, { height: this.state.rowHeight }]}>
+	    slideOutView = (
+                <View style={[
+                    styles.slideOutContainer, 
+                    { height: this.state.rowHeight }, 
+                    !this.props.isOpen ? { display: "none" } : null
+                ]}>
                     {this.props.slideoutView}
                 </View>
             );
