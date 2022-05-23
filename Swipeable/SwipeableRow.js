@@ -184,7 +184,7 @@ class SwipeableRow extends React.Component {
                 <View style={[
                     styles.slideOutContainer, 
                     { height: this.state.rowHeight }, 
-                    !this.props.isOpen ? { display: "none" } : null
+                    !this.props.isOpen ? { display: "none", opacity: 0 } : null
                 ]}>
                     {this.props.slideoutView}
                 </View>
