@@ -12,9 +12,7 @@ A zero-dependency, Swipeable FlatList for React-Native with Quick Actions, Gestu
 
 ## Usage
 
-1. Install the package in your project:
-
-`npm install react-native-swipeable-list` or `yarn add react-native-swipeable-list`
+1. Install the package in your project: `npm install react-native-swipeable-list` or `yarn add react-native-swipeable-list`
 
 2. Import the component into your component: `import SwipeableFlatList from 'react-native-swipeable-list';`
 
