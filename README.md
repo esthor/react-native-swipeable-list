@@ -20,11 +20,11 @@ or
 
 `yarn add react-native-swipeable-list`
 
-1. Import the component into your component:
+2. Import the component into your component:
 
 `import SwipeableFlatList from 'react-native-swipeable-list';`
 
-1. Pass it a data array. It inherits [FlatListProps from the standard `FlatList` component from react-native](https://facebook.github.io/react-native/docs/flatlist).
+3. Pass it a data array. It inherits [FlatListProps from the standard `FlatList` component from react-native](https://facebook.github.io/react-native/docs/flatlist).
 
 It can be passed other props:
 
