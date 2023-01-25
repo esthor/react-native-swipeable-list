@@ -14,19 +14,13 @@ A zero-dependency, Swipeable FlatList for React-Native with Quick Actions, Gestu
 
 1. Install the package in your project:
 
-`npm install react-native-swipeable-list`
+`npm install react-native-swipeable-list` or `yarn add react-native-swipeable-list`
 
-or
-
-`yarn add react-native-swipeable-list`
-
-2. Import the component into your component:
-
-`import SwipeableFlatList from 'react-native-swipeable-list';`
+2. Import the component into your component: `import SwipeableFlatList from 'react-native-swipeable-list';`
 
 3. Pass it a data array. It inherits [FlatListProps from the standard `FlatList` component from react-native](https://facebook.github.io/react-native/docs/flatlist).
 
-It can be passed other props:
+It can be passed additional props:
 
 - `shouldBounceOnMount` (default = `true`) - To alert the user that swiping is possible, the first row can bounce on component mount. Type `boolean`
 
@@ -36,7 +30,7 @@ It can be passed other props:
 
 ## Example
 
-Check out the example in the `/examples` folder. Clone this repo, then `cd examples && yarn install && yarn start` and then either  `react-native run-ios` or `react-native run-android` to get the app up and running locally. Play with the code and see what you can do.
+Check out the example in the `/examples` folder. Clone this repo, then `cd examples && yarn install && yarn start` and then either  `react-native run-ios` or `react-native run-android` to get the app up and running locally. Play with the code and see what you can do! 😎
 
 ## History & Shoutouts
 
