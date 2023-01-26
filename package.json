@@ -3,6 +3,7 @@
   "version": "0.1.2",
   "description": "A zero-dependency Swipeable FlatList for React-Native with Quick Actions, Gestures, and Animations.",
   "main": "index.js",
+  "types": "types/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
