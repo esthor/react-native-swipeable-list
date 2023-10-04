@@ -32,6 +32,9 @@
     "react-native": ">=0.61.4"
   },
   "devDependencies": {
+    "@types/node": "^20.8.2",
+    "@types/react": "^18.2.24",
+    "@types/react-native": "^0.72.3",
     "metro-react-native-babel-preset": "^0.57.0",
     "react": "16.11.0",
     "react-native": "0.62.3"
