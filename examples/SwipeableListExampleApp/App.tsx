@@ -28,11 +28,28 @@ const colorEmphasis = {
   disabled: 0.38,
 };
 
-const extractItemKey = item => {
+const extractItemKey = (item: Item) => {
   return item.id.toString();
 };
 
-const Item = ({item, backgroundColor, textColor, deleteItem}) => {
+interface RenderItemProps {
+  item: {
+    id: number;
+    name: string;
+    subject: string;
+    text: string;
+  };
+  deleteItem: (itemId: Item['id']) => void;
+}
+
+type Item = {
+  id: number;
+  name: string;
+  subject: string;
+  text: string;
+};
+
+const RenderItem = ({item}: RenderItemProps) => {
   return (
     <>
       <View style={styles.item}>
@@ -61,14 +78,14 @@ function renderItemSeparator() {
 const App = () => {
   const [data, setData] = useState(dummyData);
 
-  const deleteItem = itemId => {
+  const deleteItem = (itemId: Item['id']) => {
     // ! Please don't do something like this in production. Use proper state management.
     const newState = [...data];
     const filteredState = newState.filter(item => item.id !== itemId);
     return setData(filteredState);
   };
 
-  const archiveItem = itemId => {
+  const archiveItem = (itemId: Item['id']) => {
     Alert.alert(
       'DISHONESTY ALERT',
       "Not gonna Archive it. We're actually are gonna just delete it.",
@@ -87,7 +104,7 @@ const App = () => {
     );
   };
 
-  const snoozeItem = itemId => {
+  const snoozeItem = (itemId: Item['id']) => {
     Alert.alert(
       'DISHONESTY ALERT',
       "Not gonna Snooze it. We're actually are gonna just delete it.",
@@ -106,22 +123,27 @@ const App = () => {
     );
   };
 
-  const QuickActions = (index, qaItem) => {
+  interface QuickActionsProps {
+    index: number;
+    item: Item;
+  }
+
+  const QuickActions = ({index, item}: QuickActionsProps) => {
     return (
       <View style={styles.qaContainer}>
         <View style={[styles.button, styles.button1]}>
-          <Pressable onPress={() => archiveItem(qaItem.id)}>
-            <Text style={[styles.buttonText, styles.button1Text]}>Archive</Text>
+          <Pressable onPress={() => archiveItem(item.id)}>
+            <Text style={styles.buttonText}>Archive</Text>
           </Pressable>
         </View>
         <View style={[styles.button, styles.button2]}>
-          <Pressable onPress={() => snoozeItem(qaItem.id)}>
-            <Text style={[styles.buttonText, styles.button2Text]}>Snooze</Text>
+          <Pressable onPress={() => snoozeItem(item.id)}>
+            <Text style={styles.buttonText}>Snooze</Text>
           </Pressable>
         </View>
         <View style={[styles.button, styles.button3]}>
-          <Pressable onPress={() => deleteItem(qaItem.id)}>
-            <Text style={[styles.buttonText, styles.button3Text]}>Delete</Text>
+          <Pressable onPress={() => deleteItem(item.id)}>
+            <Text style={styles.buttonText}>Delete</Text>
           </Pressable>
         </View>
       </View>
@@ -138,11 +160,13 @@ const App = () => {
         <SwipeableFlatList
           keyExtractor={extractItemKey}
           data={data}
-          renderItem={({item}) => (
-            <Item item={item} deleteItem={() => deleteItem} />
+          renderItem={({item}: RenderItemProps) => (
+            <RenderItem item={item} deleteItem={() => deleteItem} />
           )}
           maxSwipeDistance={240}
-          renderQuickActions={({index, item}) => QuickActions(index, item)}
+          renderQuickActions={({index, item}: {index: number; item: Item}) =>
+            QuickActions({index, item})
+          }
           contentContainerStyle={styles.contentContainerStyle}
           shouldBounceOnMount={true}
           ItemSeparatorComponent={renderItemSeparator}
@@ -175,7 +199,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   messageContainer: {
-    backgroundColor: darkColors.backgroundColor,
+    backgroundColor: darkColors.background,
     maxWidth: 300,
   },
   name: {
@@ -228,22 +252,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  button1: {
+    backgroundColor: darkColors.primary,
+  },
+  button2: {
+    backgroundColor: darkColors.secondary,
+  },
+  button3: {
+    backgroundColor: darkColors.error,
+  },
   buttonText: {
     fontWeight: 'bold',
     opacity: colorEmphasis.high,
-  },
-  button1Text: {
-    color: darkColors.primary,
-  },
-  button2Text: {
-    color: darkColors.secondary,
-  },
-  button3Text: {
-    color: darkColors.error,
+    color: darkColors.onBackground,
+    fontSize: 16,
   },
   contentContainerStyle: {
     flexGrow: 1,
-    backgroundColor: darkColors.backgroundColor,
+    backgroundColor: darkColors.background,
   },
 });
 
