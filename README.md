@@ -1,6 +1,6 @@
 # react-native-swipeable-list
 
-![npm version](https://img.shields.io/npm/v/react-native-swipeable-list?color=brightgreen)
+[![npm version](https://img.shields.io/npm/v/react-native-swipeable-list?color=brightgreen)](https://www.npmjs.com/package/react-native-swipeable-list)
 [![Downloads](https://img.shields.io/npm/dm/react-native-swipeable-list.svg?sanitize=true)](https://npmcharts.com/compare/react-native-swipeable-list?minimal=true)
 ![License](https://img.shields.io/npm/l/react-native-swipeable-list?color=brightgreen)
 ![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
