@@ -27,6 +27,7 @@ import SwipeableRow from './SwipeableRow';
 //      * Callback method to render the view that will be unveiled on swipe
 //      */
 //     renderQuickActions: renderItemType,
+//     disableSwipe?: ?boolean,
 // };
 
 // type Props<ItemT> = SwipableListProps & FlatListProps<ItemT>;
@@ -110,6 +111,8 @@ class SwipeableFlatList extends React.Component {
             this._shouldBounceFirstRowOnMount = false;
             shouldBounceOnMount = true;
         }
+
+        if(this.props.disableSwipe) return this.props.renderItem(info)
 
         return (
             <SwipeableRow
