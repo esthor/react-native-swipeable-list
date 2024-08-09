@@ -53,7 +53,6 @@ const emptyFunction = () => {};
 //     shouldBounceOnMount?: ?boolean,
 //     slideoutView?: ?React.Node,
 //     swipeThreshold?: ?number,
-//     disableSwipe?: ?boolean,
 // |}>;
 
 // type State = {
