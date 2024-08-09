@@ -53,6 +53,7 @@ const emptyFunction = () => {};
 //     shouldBounceOnMount?: ?boolean,
 //     slideoutView?: ?React.Node,
 //     swipeThreshold?: ?number,
+//     disableSwipe?: ?boolean,
 // |}>;
 
 // type State = {
@@ -146,6 +147,7 @@ class SwipeableRow extends React.Component {
     };
 
     componentDidMount() {
+       
         if (this.props.shouldBounceOnMount) {
             /**
              * Do the on mount bounce after a delay because if we animate when other
