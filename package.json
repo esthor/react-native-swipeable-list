@@ -1,7 +1,7 @@
 {
   "name": "react-native-swipeable-list",
-  "version": "0.1.1",
-  "description": "A Swipeable FlatList for React-Native with Quick Actions & Animations",
+  "version": "0.1.2",
+  "description": "A zero-dependency Swipeable FlatList for React-Native with Quick Actions, Gestures, and Animations.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
