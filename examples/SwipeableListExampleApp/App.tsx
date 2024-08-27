@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -9,6 +9,7 @@ import {
   Alert,
 } from 'react-native';
 
+// @ts-ignore-next-line
 import SwipeableFlatList from 'react-native-swipeable-list';
 
 import {dummyData} from './data/dummyData';
@@ -71,6 +72,41 @@ const RenderItem = ({item}: RenderItemProps) => {
   );
 };
 
+interface QuickActionsProps {
+  index: number;
+  item: Item;
+  archiveItem: (itemId: Item['id']) => void;
+  snoozeItem: (itemId: Item['id']) => void;
+  deleteItem: (itemId: Item['id']) => void;
+}
+
+const QuickActions = ({
+  item,
+  archiveItem,
+  snoozeItem,
+  deleteItem,
+}: QuickActionsProps) => {
+  return (
+    <View style={styles.qaContainer}>
+      <View style={[styles.button, styles.button1]}>
+        <Pressable onPress={() => archiveItem(item.id)}>
+          <Text style={styles.buttonText}>Archive</Text>
+        </Pressable>
+      </View>
+      <View style={[styles.button, styles.button2]}>
+        <Pressable onPress={() => snoozeItem(item.id)}>
+          <Text style={styles.buttonText}>Snooze</Text>
+        </Pressable>
+      </View>
+      <View style={[styles.button, styles.button3]}>
+        <Pressable onPress={() => deleteItem(item.id)}>
+          <Text style={styles.buttonText}>Delete</Text>
+        </Pressable>
+      </View>
+    </View>
+  );
+};
+
 function renderItemSeparator() {
   return <View style={styles.itemSeparator} />;
 }
@@ -123,33 +159,6 @@ const App = () => {
     );
   };
 
-  interface QuickActionsProps {
-    index: number;
-    item: Item;
-  }
-
-  const QuickActions = ({index, item}: QuickActionsProps) => {
-    return (
-      <View style={styles.qaContainer}>
-        <View style={[styles.button, styles.button1]}>
-          <Pressable onPress={() => archiveItem(item.id)}>
-            <Text style={styles.buttonText}>Archive</Text>
-          </Pressable>
-        </View>
-        <View style={[styles.button, styles.button2]}>
-          <Pressable onPress={() => snoozeItem(item.id)}>
-            <Text style={styles.buttonText}>Snooze</Text>
-          </Pressable>
-        </View>
-        <View style={[styles.button, styles.button3]}>
-          <Pressable onPress={() => deleteItem(item.id)}>
-            <Text style={styles.buttonText}>Delete</Text>
-          </Pressable>
-        </View>
-      </View>
-    );
-  };
-
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -165,10 +174,11 @@ const App = () => {
           )}
           maxSwipeDistance={240}
           renderQuickActions={({index, item}: {index: number; item: Item}) =>
-            QuickActions({index, item})
+            QuickActions({index, item, archiveItem, snoozeItem, deleteItem})
           }
           contentContainerStyle={styles.contentContainerStyle}
-          shouldBounceOnMount={true}
+          // shouldBounceOnMount={false} -- This is not working on 0.74+ React Native
+          bounceFirstRowOnMount={false} // THIS IS THE WORKAROUND
           ItemSeparatorComponent={renderItemSeparator}
         />
       </SafeAreaView>

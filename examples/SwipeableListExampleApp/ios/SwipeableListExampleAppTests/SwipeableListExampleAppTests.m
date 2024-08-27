@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface SwipeableFlatListExample072Tests : XCTestCase
+@interface SwipeableListExampleAppTests : XCTestCase
 
 @end
 
-@implementation SwipeableFlatListExample072Tests
+@implementation SwipeableListExampleAppTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {
