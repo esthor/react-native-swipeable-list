@@ -25,6 +25,9 @@ It can be passed additional props:
 - `maxSwipeDistance` - Maximum distance to open to after a swipe. Type `number || (Object => number)`
 
 - `renderQuickActions` - Callback method to render the view that will be unveiled on swipe. Type `renderItemType` (which provides `index` and  `item`, which will be very useful for performing actions on your items)
+  
+- `disableSwipe` - (default = `false`) - Allows to disable swiping or not.  Type `boolean`
+
 
 ## Example
 
